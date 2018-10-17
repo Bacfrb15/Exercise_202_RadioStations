@@ -27,21 +27,71 @@ public class RadioGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jmHinzu = new javax.swing.JMenuItem();
+        jmBandverst = new javax.swing.JMenuItem();
+        jmBandanz = new javax.swing.JMenuItem();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jmHinzu.setText("hinzufügen");
+        jmHinzu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onHinzufuegen(evt);
+            }
+        });
+        jPopupMenu1.add(jmHinzu);
+
+        jmBandverst.setText("Band verstecken");
+        jmBandverst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBandVerstecken(evt);
+            }
+        });
+        jPopupMenu1.add(jmBandverst);
+
+        jmBandanz.setText("Band anzeigen");
+        jmBandanz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onBandAnzeigen(evt);
+            }
+        });
+        jPopupMenu1.add(jmBandanz);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout());
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        table.setColumnSelectionAllowed(true);
+        table.setComponentPopupMenu(jPopupMenu1);
+        jScrollPane1.setViewportView(table);
+
+        getContentPane().add(jScrollPane1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onHinzufuegen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onHinzufuegen
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onHinzufuegen
+
+    private void onBandVerstecken(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBandVerstecken
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBandVerstecken
+
+    private void onBandAnzeigen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBandAnzeigen
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onBandAnzeigen
 
     /**
      * @param args the command line arguments
@@ -79,5 +129,11 @@ public class RadioGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem jmBandanz;
+    private javax.swing.JMenuItem jmBandverst;
+    private javax.swing.JMenuItem jmHinzu;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }
