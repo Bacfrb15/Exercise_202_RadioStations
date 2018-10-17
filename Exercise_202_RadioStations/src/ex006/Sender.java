@@ -12,9 +12,9 @@ package ex006;
 public class Sender {
     private String sender;
     private double frequenz;
-    private boolean band;
+    private String band;
 
-    public Sender(String sender, double frequenz, boolean band) {
+    public Sender(String sender, double frequenz, String band) {
         this.sender = sender;
         this.frequenz = frequenz;
         this.band = band;
@@ -36,11 +36,11 @@ public class Sender {
         this.frequenz = frequenz;
     }
 
-    public boolean isBand() {
+    public String getBand() {
         return band;
     }
 
-    public void setBand(boolean band) {
+    public void setBand(String band) {
         this.band = band;
-    }
+    } 
 }

@@ -5,6 +5,8 @@
  */
 package ex006;
 
+import javax.swing.table.TableColumn;
+
 /**
  *
  * @author franz
@@ -14,8 +16,14 @@ public class RadioGUI extends javax.swing.JFrame {
     /**
      * Creates new form RadioGUI
      */
+    private SenderTableModel model = new SenderTableModel();
+    private SenderTableRenderer str = new SenderTableRenderer();
+    
+    
     public RadioGUI() {
         initComponents();
+        table.setModel(model);
+        model.add(new Sender("test", 82.31, "test"));
     }
 
     /**
@@ -82,15 +90,26 @@ public class RadioGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onHinzufuegen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onHinzufuegen
-        // TODO add your handling code here:
+        SenderDlg dlg = new SenderDlg(this, true);
+        dlg.setVisible(true);
+        if (dlg.IsOK()) {
+            Sender s = dlg.Sender();
+            model.add(s);
+        }
     }//GEN-LAST:event_onHinzufuegen
 
     private void onBandVerstecken(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBandVerstecken
-        // TODO add your handling code here:
+        TableColumn idClmn= table.getColumn("Band");
+        idClmn.setMaxWidth(0);
+        idClmn.setMinWidth(0);
+        idClmn.setPreferredWidth(0);
     }//GEN-LAST:event_onBandVerstecken
 
     private void onBandAnzeigen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onBandAnzeigen
-        // TODO add your handling code here:
+        TableColumn idClmn= table.getColumn("Band");
+        idClmn.setMaxWidth(this.getWidth()/3);
+        idClmn.setMinWidth(this.getWidth()/3);
+        idClmn.setPreferredWidth(this.getWidth()/3);
     }//GEN-LAST:event_onBandAnzeigen
 
     /**
